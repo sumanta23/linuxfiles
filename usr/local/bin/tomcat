@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo $1
+case $1 in
+"start")
+echo "Starting"
+/home/drive/software/tomcat/bin/startup.sh
+;;
+"stop")
+echo "Stopping"
+/home/drive/software/tomcat/bin/shutdown.sh
+;;
+esac
+

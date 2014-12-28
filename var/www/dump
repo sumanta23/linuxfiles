@@ -1,0 +1,5 @@
+for dir in `ls /var/www/svn/`
+do
+  	svnadmin dump /var/www/svn/$dir | gzip -9 > /opt/sw/svndump/$dir.dump.gz
+	# Do something with $dir...
+done

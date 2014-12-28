@@ -1,0 +1,66 @@
+#/opt/sw/glassfish4
+
+#!/bin/sh
+GLASSFISH_HOME=/opt/sw/glassfish4
+
+case $1 in
+"start")
+echo "Starting"
+if [ $# -ne 2 ]; then
+	$GLASSFISH_HOME/bin/asadmin start-domain domain1
+fi
+$GLASSFISH_HOME/bin/asadmin start-domain $2
+;;
+"stop")
+echo "Stopping"
+if [ $# -ne 2 ]; then
+	$GLASSFISH_HOME/bin/asadmin stop-domain domain1
+fi
+$GLASSFISH_HOME/bin/asadmin stop-domain $2
+;;
+"status")
+$GLASSFISH_HOME/bin/asadmin list-domains | grep -v Command
+$GLASSFISH_HOME/bin/asadmin list-domains | grep -q "domain1 running"
+#  if [ $? -eq 0 ]; then
+#    $GLASSFISH_HOME/bin/asadmin uptime | grep -v Command
+#    echo "\n# Deployed applications:"
+#    $GLASSFISH_HOME/bin/asadmin list-applications --long=true --resources | grep -v Command
+#    echo "\n# JDBC resources:"
+#    $GLASSFISH_HOME/bin/asadmin list-jdbc-resources | grep "jdbc/"
+#  fi
+;;
+"create-domain")
+$GLASSFISH_HOME/bin/asadmin create-domain $2
+;;
+"delete-domain")
+$GLASSFISH_HOME/bin/asadmin delete-domain $2
+;;
+"list-domain")
+$GLASSFISH_HOME/bin/asadmin list-domains
+;;
+"start-db")
+$GLASSFISH_HOME/bin/asadmin start-database --dbhome $2
+;;
+"stop-db")
+$GLASSFISH_HOME/bin/asadmin stop-database
+;;
+"deploy")
+$GLASSFISH_HOME/bin/asadmin deploy $2
+;;
+"dedeploy")
+$GLASSFISH_HOME/bin/asadmin undeploy $2
+;;
+"list-app")
+$GLASSFISH_HOME/bin/asadmin list-applications
+;;
+"enable-secure-admin")
+$GLASSFISH_HOME/bin/asadmin --host $2 --port 4848 enable-secure-admin
+;;
+"diaable-secure-admin")
+$GLASSFISH_HOME/bin/asadmin --host $2 --port 4848 disable-secure-admin
+;;
+"change-admin-password")
+$GLASSFISH_HOME/bin/asadmin --host $2 --port 4848 change-admin-password
+;;
+esac
+

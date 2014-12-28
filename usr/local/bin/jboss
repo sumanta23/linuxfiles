@@ -1,0 +1,31 @@
+#!/bin/sh
+
+JBOSS_HOME=/opt/sw/jboss-as-7.1.1.Final
+
+case $1 in
+"start")
+echo "Starting"
+$JBOSS_HOME/bin/standalone.sh -b 0.0.0.0 &
+;;
+"stop")
+echo "Stopping"
+$JBOSS_HOME/bin/jboss-cli.sh --connect --command=:shutdown
+;;
+"addappuser")
+echo "adding"
+JBOSS_HOME/bin/add-user.sh -a $2 $3
+;;
+"addmnguser")
+JBOSS_HOME/bin/add-user.sh $2 $3
+;;
+"domain")
+echo "domain"
+JBOSS_HOME/bin/domain.sh --host-config=$2 -Djboss.bind.address.management=$3 
+;;
+"help")
+echo "start  -Start Jboss AppServer In standalon Mode"
+echo "stop   -Stop Jboss AppServer running from standalon Mode"
+echo "addappuser -a username password-  Adding a Application user"
+echo "addappuser username password-  Adding a management user"
+
+esac

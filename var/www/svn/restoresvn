@@ -1,0 +1,21 @@
+#!/bin/bash
+
+function create_repo {
+svnadmin create $1
+}
+
+mkdir -p /tmp/svn/
+cd /tmp/svn/
+ls /share/opt/sw/svndump/ | sed 's/.dump//' |xargs touch
+cd -
+for file in `ls /tmp/svn/`
+do
+        svnadmin create $file
+        # Do something with $dir...
+        chown -Rv apache.apache /var/www/svn/$file
+        svnadmin load /var/www/svn/$file < /share/opt/sw/svndump/${file}.dump
+
+done
+
+
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+function create_repo {
+svnadmin create $1
+}
+
+
+if [ $# -gt 0 ]; then
+create_repo $1
+
+if [ "$2" == "y" ]; then
+
+mkdir -pv /tmp/subversion-layout/{trunk,branches,tags}
+
+svn import /tmp/subversion-layout/ file:///var/www/svn/$1 -m "creating dir structure"
+
+fi
+
+chown -Rv apache.apache /var/www/svn/$1
+
+fi
