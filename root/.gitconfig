@@ -1,11 +1,20 @@
 [user]
 	name = sumanta23
 	email = nandisumanta0@gmail.com
+[color]
+	ui = true
+[gui]
+	encoding = utf-8
+[push]
+	default = tracking
+[core]
+	excludesfile = /root/.gitignore
+	autocrlf = true
 [color "diff"]
-	meta = blue black bold
+    meta = blue black bold
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=format:'%C(green)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold red)<%an>%Creset' --abbrev-commit --date=relative
     lh = log --graph --oneline --decorate --all
+    wsi = -Xignore-all-space
     co = checkout
     br = branch
-
