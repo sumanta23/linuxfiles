@@ -37,7 +37,6 @@
 	<rule ref="rulesets/java/design.xml/FinalFieldCouldBeStatic" /><!-- Mandatory -->
 	<rule ref="rulesets/java/design.xml/InstantiationToGetClass" /><!-- Mandatory -->
 	<rule ref="rulesets/java/design.xml/ImmutableField" /><!-- Mandatory -->
-	<rule ref="rulesets/java/design.xml/UseSingleton" /><!-- Advisatory -->
 	<rule ref="rulesets/java/codesize.xml">
 	<!-- Disabled these code size rules -->
 		<exclude name="CyclomaticComplexity" />
