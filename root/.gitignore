@@ -2,8 +2,10 @@
 .project
 .classpath
 **/target/
-/bin
+**/bin
 .pmd
 .idea
-.iml
-/test.log
+**.iml
+**/.idea
+*.ipr
+*.iws

@@ -9,13 +9,14 @@
 [gui]
 	encoding = utf-8
 [diff]
-	tool = diffmerge
+	tool = vimdiff 
 [difftool]
 	prompt = false
-[difftool "diffmerge"]
-	cmd = /root/.m2/sgdm.exe \"$LOCAL\" \"$REMOTE\"   
 [merge]
-	tool = diffmerge    
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false    
 [push]
 	default = tracking
 [color "diff"]
@@ -25,4 +26,6 @@
     lh = log --graph --oneline --decorate --all
     co = checkout
     br = branch
-    gdiff= difftool --tool=diffmerge
+    gdiff= difftool --tool=vimdiff
+[credential]
+	helper = cache --timeout=3600
