@@ -1,0 +1,9 @@
+Package: myapp
+Version: 1.0
+Section: misc
+Priority: optional
+Architecture: noarch
+Maintainer: Sumanta Nandi <nandisumanta0@gmail.com>
+Distribution: dev
+Homepage: 
+Description: package for dev env conf

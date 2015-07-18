@@ -38,6 +38,7 @@
 									<excludes>
 										<exclude>pom.xml</exclude>
 										<exclude>.git/</exclude>
+										<exclude>control/</exclude>
 									</excludes>
 								</resource>
 							</resources>
@@ -45,15 +46,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
-			<!-- <plugin> This plugin's configuration must come *after* the Maven 
-				Resources Plugin, and *before* the Debian Maven Plugin. <groupId>org.apache.maven.plugins</groupId> 
-				<artifactId>maven-antrun-plugin</artifactId> <version>1.6</version> <executions> 
-				<execution> <id>fix-permissions</id> <phase>package</phase> <configuration> 
-				<target> <chmod perm="ugo+x"> <fileset dir="${basedir}/target/pkg"> </fileset> 
-				</chmod> </target> </configuration> <goals> <goal>run</goal> </goals> </execution> 
-				</executions> </plugin> -->
-
 
 		</plugins>
 	</build>
@@ -106,18 +98,31 @@
 		<profile>
 			<id>deb</id>
 			<build>
-				<!-- To use the plugin goals, add the following in your POM or parent 
-					POM -->
 				<plugins>
 					<plugin>
-						<groupId>net.sf.debian-maven</groupId>
-						<artifactId>debian-maven-plugin</artifactId>
-						<version>1.0.6</version>
-						<configuration>
-							<!-- <packageName>my-package</packageName> <packageVersion>1.0.0</packageVersion> 
-								... -->
-						</configuration>
-					</plugin>
+                      <artifactId>jdeb</artifactId>
+                      <groupId>org.vafer</groupId>
+                      <version>1.3</version>
+                      <executions>
+                        <execution>
+                          <phase>package</phase>
+                          <goals>
+                            <goal>jdeb</goal>
+                          </goals>
+                          <configuration>
+                            <controlDir>${project.basedir}/control</controlDir>
+                            <deb>${project.build.directory}/${project.artifactId}.deb</deb>
+                            <dataSet>
+                              <data>
+                                <src>${project.build.directory}/pkg</src>
+                                <type>directory</type>
+                               
+                              </data>
+                            </dataSet>
+                        </configuration>
+                      </execution>
+                    </executions>
+                    </plugin>
 				</plugins>
 			</build>
 		</profile>
