@@ -12,5 +12,7 @@ bindkey ^[[D prev
 
 hardstatus alwayslastline "%{.bW} %-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
 
+term screen-256color
+
 # detach on hangup
 autodetach on
