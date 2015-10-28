@@ -2,7 +2,7 @@
 	name = sumanta23
 	email = nandisumanta0@gmail.com
 [core]
-	excludesfile = /root/.gitignore
+	excludesfile = ~/.gitignore
 	autocrlf = true
 [color]
 	ui = true
