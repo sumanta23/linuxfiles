@@ -3,7 +3,9 @@
 	email = nandisumanta0@gmail.com
 [core]
 	excludesfile = ~/.gitignore
-	autocrlf = true
+	autocrlf = false
+	safecrlf = true
+	eol = lf
 [color]
 	ui = true
 [gui]
@@ -20,10 +22,11 @@
 [push]
 	default = tracking
 [color "diff"]
-        meta = blue black bold
+    meta = blue black bold
 [alias]
 	lg = log --graph --pretty=format:'%C(green)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold red)<%an>%Creset' --abbrev-commit --date=relative
 	lh = log --graph --oneline --decorate --all
+	lc = diff-tree --no-commit-id --name-only -r
 	co = checkout
 	br = branch
 	gdiff = difftool --tool=vimdiff
