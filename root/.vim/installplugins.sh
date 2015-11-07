@@ -11,6 +11,9 @@ cd ~/.vim/bundle/ && git clone --recursive https://github.com/davidhalter/jedi-v
 #install NERDTree
 cd ~/.vim/bundle/ && git clone https://github.com/scrooloose/nerdtree.git
 
+#install CTRLP
+cd ~/.vim/ && git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
+
 #install vim-nodejs
 # :filetype plugin on
 cd ~/.vim/ && wget -O master.zip https://codeload.github.com/myhere/vim-nodejs-complete/legacy.zip/master
