@@ -12,3 +12,10 @@ alias junit='mvn clean install | tee /tmp/log.txt'
 
 #battery Status
 alias power='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | grep -oE "[0-9]{1,3}%"'
+
+#ctags generator
+function createCtags(){
+ ctags -R --languages=$1 --exclude=.git --exclude=logs --exclude=node_modules
+}
+
+alias ctag=createCtags
