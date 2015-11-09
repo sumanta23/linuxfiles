@@ -19,3 +19,8 @@ cd ~/.vim/ && git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
 cd ~/.vim/ && wget -O master.zip https://codeload.github.com/myhere/vim-nodejs-complete/legacy.zip/master
 unzip master.zip
 
+#install syntastic
+cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic.git
+
+#install supertab
+cd ~/.vim/bundle && git clone https://github.com/ervandew/supertab.git
