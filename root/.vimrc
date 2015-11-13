@@ -187,6 +187,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+map <C-\> <C-W>s
+map <leader>\ <C-W>v
+
 " Close the current buffer
 map <leader>bd :Bclose<cr>
 
@@ -306,10 +309,10 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-w>     :tabnew<CR>
+nnoremap <C-i>     :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-w>     <Esc>:tabnew<CR>
+inoremap <C-i>     <Esc>:tabnew<CR>
 
 map <Leader>j :bn<CR>
 map <Leader>k :bp<CR>
