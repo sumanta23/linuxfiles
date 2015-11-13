@@ -24,3 +24,6 @@ cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic.git
 
 #install supertab
 cd ~/.vim/bundle && git clone https://github.com/ervandew/supertab.git
+
+#install ctags
+#sudo apt-get install ctags
