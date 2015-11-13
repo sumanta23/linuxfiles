@@ -306,10 +306,10 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
+nnoremap <C-w>     :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
+inoremap <C-w>     <Esc>:tabnew<CR>
 
 map <Leader>j :bn<CR>
 map <Leader>k :bp<CR>
