@@ -112,11 +112,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# set env variables and path
-if [ -f ~/.setenv ]; then
-    . ~/.setenv
-fi
-
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
