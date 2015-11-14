@@ -23,6 +23,7 @@ fi
 alias arq='mvn clean install -Pjboss_managed_local | tee /tmp/log.txt'
 alias junit='mvn clean install | tee /tmp/log.txt'
 alias findtxt='grep -rnw . -e'
+alias gvim="gvim 2>/dev/null"
 
 #battery Status
 alias power='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | grep -oE "[0-9]{1,3}%"'
