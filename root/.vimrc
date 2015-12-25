@@ -29,6 +29,7 @@ autocmd! bufwritepost .vimrc source %
 " Sets how many lines of history VIM has to remember
 set history=700
 
+set number
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -108,6 +109,7 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
+syntax on
 
 colorscheme desert
 set background=dark
@@ -174,6 +176,20 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 map j gj
 map k gk
 
+" command to use tabs
+nnoremap <leader>[   :tabprevious<CR>
+nnoremap <leader>]   :tabnext<CR>
+nnoremap <leader>=   :tabnew<CR>
+inoremap <leader>[   <Esc>:tabprevious<CR>i
+inoremap <leader>]   <Esc>:tabnext<CR>i
+inoremap <leader>=   <Esc>:tabnew<CR>
+nnoremap <leader>-   :tabclose<CR>
+inoremap <leader>-   <Esc>:tabclose<CR>
+
+map <Leader>j :bn<CR>
+map <Leader>k :bp<CR>
+
+
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
@@ -196,6 +212,7 @@ map <leader>bd :Bclose<cr>
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
 
+" optimize
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -304,18 +321,6 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NAVIGATION
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-i>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-i>     <Esc>:tabnew<CR>
-
-map <Leader>j :bn<CR>
-map <Leader>k :bp<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " cut copy paste
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -459,11 +464,28 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
 
-" ============================================================================
-" Python IDE Setup
-" ============================================================================
-"
+"configure ctrlp.vim
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>m :CtrlPMRUFiles<CR>
+nnoremap <leader>t :CtrlPTag<CR>
+let g:ctrlp_working_path_mode = 'a'
+"ignore node_modules and git and unittests and Client
+let g:ctrlp_custom_ignore = 'node_modules\|git\|unittests\|target\|build\|dist\|bin'
 
-" Settings for jedi-vim
-" cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
+
+"configure Tabular
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nnoremap <Leader>a :Tabularize /
+vnoremap <Leader>a :Tabularize /
+
+"change swap file location
+set directory=~/.vimtemp/swaps//
+set backupdir=~/.vimtemp/backups//
+set udf
+set udir=~/.vimtemp/undo//
+
+

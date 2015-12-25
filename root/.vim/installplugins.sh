@@ -25,5 +25,10 @@ cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic.git
 #install supertab
 cd ~/.vim/bundle && git clone https://github.com/ervandew/supertab.git
 
+#install tabular
+cd ~/.vim/bundle && git clone git://github.com/godlygeek/tabular.git
+
+mkdir .vimtemp/swaps .vimtemp/backups .vimtemp/undo
+
 #install ctags
 #sudo apt-get install ctags
