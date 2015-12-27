@@ -29,7 +29,6 @@ autocmd! bufwritepost .vimrc source %
 " Sets how many lines of history VIM has to remember
 set history=700
 
-set number
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -44,7 +43,8 @@ let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
-
+" Fast quit
+nmap <leader>q :q!<cr>
 
 " use mouse
 set mouse=a
@@ -248,49 +248,15 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 
-" Setting gvim status color
-hi User1 guifg=#ffdad8  guibg=#880c0e
-hi User2 guifg=#000000  guibg=#F4905C
-hi User3 guifg=#292b00  guibg=#f4f597
-hi User4 guifg=#112605  guibg=#aefe7B
-hi User5 guifg=#051d00  guibg=#7dcc7d
-hi User7 guifg=#ffffff  guibg=#880c0e gui=bold
-hi User8 guifg=#ffffff  guibg=#5b7fbb
-hi User9 guifg=#ffffff  guibg=#810085
-hi User0 guifg=#ffffff  guibg=#094afe
-
-" Setting vim status color
-hi User1 ctermfg=black  ctermbg=green
-hi User2 ctermfg=black  ctermbg=magenta
-hi User3 ctermfg=black  ctermbg=Yellow
-hi User4 ctermfg=black  ctermbg=Green
-hi User5 ctermfg=black  ctermbg=grey
-hi User7 ctermfg=white  ctermbg=red
-hi User8 ctermfg=white  ctermbg=blue
-hi User9 ctermfg=white  ctermbg=magenta
-hi User0 ctermfg=white  ctermbg=grey
-
-" Format the status line
-set statusline=
-set statusline+=%7*\[%n]                                  "buffernr
-set statusline+=%1*\ %<%F\                                "File+path
-set statusline+=%2*\ %y\                                  "FileType
-set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
-set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
-set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix..) 
-set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\  "Spellanguage & Highlight on?
-set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-set statusline+=%9*\ col:%03c\                            "Colnr
-set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
-
-
-function! HighlightSearch()
-  if &hls
-    return 'H'
-  else
-    return ''
-  endif
-endfunction
+"configure airline
+set noshowmode
+set laststatus=2
+set ttimeoutlen=50
+let g:airline_theme='papercolor'
+let g:airline_section_b=""
+let g:airline_section_warning=""
+let g:airline#extensions#branch#enabled = 0
+let g:airline#extensions#csv#enabled = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -321,6 +287,9 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NAVIGATION
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " cut copy paste
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -487,5 +456,6 @@ set directory=~/.vimtemp/swaps//
 set backupdir=~/.vimtemp/backups//
 set udf
 set udir=~/.vimtemp/undo//
+
 
 

@@ -26,9 +26,18 @@ cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic.git
 cd ~/.vim/bundle && git clone https://github.com/ervandew/supertab.git
 
 #install tabular
-cd ~/.vim/bundle && git clone git://github.com/godlygeek/tabular.git
+cd ~/.vim/bundle && git clone https://github.com/godlygeek/tabular.git
+
+#install solarized
+cd ~/.vim/bundle && git clone https://github.com/altercation/vim-colors-solarized.git
+
+#install airline
+cd ~/.vim/bundle && git clone https://github.com:bling/vim-airline.git
 
 mkdir .vimtemp/swaps .vimtemp/backups .vimtemp/undo
 
 #install ctags
 #sudo apt-get install ctags
+
+echo "install https://github.com/Anthony25/gnome-terminal-colors-solarized.git manually"
+
