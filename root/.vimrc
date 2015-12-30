@@ -44,7 +44,7 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 " Fast quit
-nmap <leader>q :q!<cr>
+nmap <leader>q :qa!<cr>
 
 " use mouse
 set mouse=a
@@ -349,9 +349,6 @@ map <leader>s? z=
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Quickly open a buffer for scripbble
-map <leader>q :e ~/buffer<cr>
-
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
@@ -440,8 +437,7 @@ nnoremap <leader>m :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 let g:ctrlp_working_path_mode = 'a'
 "ignore node_modules and git and unittests and Client
-let g:ctrlp_custom_ignore = 'node_modules\|git\|unittests\|target\|build\|dist\|bin'
-
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bin|dist|build|unittests)|(\.(swp|ico|git|svn))$'
 
 "configure Tabular
 nmap <Leader>a= :Tabularize /=<CR>
@@ -458,4 +454,15 @@ set udf
 set udir=~/.vimtemp/undo//
 
 
+"configure tagbar
+nmap <F8>  :Tagbar<CR>
+
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+else
+    syntax on
+    set background=dark
+    colorscheme pablo
+endif
 

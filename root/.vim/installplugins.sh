@@ -14,10 +14,8 @@ cd ~/.vim/bundle/ && git clone https://github.com/scrooloose/nerdtree.git
 #install CTRLP
 cd ~/.vim/ && git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
 
-#install vim-nodejs
-# :filetype plugin on
-cd ~/.vim/ && wget -O master.zip https://codeload.github.com/myhere/vim-nodejs-complete/legacy.zip/master
-unzip master.zip
+#install vim-fugitive
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-fugitive.git
 
 #install syntastic
 cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic.git
@@ -32,9 +30,14 @@ cd ~/.vim/bundle && git clone https://github.com/godlygeek/tabular.git
 cd ~/.vim/bundle && git clone https://github.com/altercation/vim-colors-solarized.git
 
 #install airline
-cd ~/.vim/bundle && git clone https://github.com:bling/vim-airline.git
+cd ~/.vim/bundle && git clone https://github.com/bling/vim-airline.git
 
-mkdir .vimtemp/swaps .vimtemp/backups .vimtemp/undo
+#install surround
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-surround.git
+
+
+
+mkdir -p ~/.vimtemp/swaps ~/.vimtemp/backups ~/.vimtemp/undo
 
 #install ctags
 #sudo apt-get install ctags
