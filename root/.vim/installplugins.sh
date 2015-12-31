@@ -12,7 +12,7 @@ cd ~/.vim/bundle/ && git clone --recursive https://github.com/davidhalter/jedi-v
 cd ~/.vim/bundle/ && git clone https://github.com/scrooloose/nerdtree.git
 
 #install CTRLP
-cd ~/.vim/ && git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
+cd ~/.vim/bundle && git clone https://github.com/ctrlpvim/ctrlp.vim.git
 
 #install vim-fugitive
 cd ~/.vim/bundle && git clone https://github.com/tpope/vim-fugitive.git
@@ -35,6 +35,8 @@ cd ~/.vim/bundle && git clone https://github.com/bling/vim-airline.git
 #install surround
 cd ~/.vim/bundle && git clone https://github.com/tpope/vim-surround.git
 
+#install tagbar
+cd ~/.vim/bundle && git clone https://github.com/majutsushi/tagbar.git
 
 
 mkdir -p ~/.vimtemp/swaps ~/.vimtemp/backups ~/.vimtemp/undo
