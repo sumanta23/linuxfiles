@@ -1,15 +1,13 @@
 #!/usr/local/env bash
 
 export EDITOR=vim
-
+export SW_HOME=/opt/sw
 #Set env variables
-export JAVA_HOME=~/sw/jdk1.7.0_75
-#export JAVA_HOME=~/sw/jdk1.9.0
-export M2_HOME=~/sw/apache-maven-3.3.3
-export ANT_HOME=~/sw/apache-ant-1.9.4
-#export IDEA_HOME=~/sw/idea-IC-139.1117.1
-export GRADLE_HOME=~/sw/gradle-2.3
-export SUBLIME_HOME=~/sw/sublime_test_3
+export JAVA_HOME=$SW_HOME/jdk1.7.0_75
+export M2_HOME=$SW_HOME/apache-maven-3.3.3
+export ANT_HOME=$SW_HOME/apache-ant-1.9.4
+export GRADLE_HOME=$SW_HOME/gradle-2.3
+export SUBLIME_HOME=$SW_HOME/sublime_test_3
 PATH=$JAVA_HOME/bin:$M2_HOME/bin:$ANT_HOME/bin:$GRADLE_HOME/bin:$SUBLIME_HOME:$PATH
 
 
@@ -37,3 +35,4 @@ function createCtags(){
 alias ctag=createCtags
 
 
+eval `dircolors ~/.vim/dircolors.256dark`

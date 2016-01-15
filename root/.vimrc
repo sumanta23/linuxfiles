@@ -461,8 +461,9 @@ if has('gui_running')
     set background=dark
     colorscheme solarized
 else
+    let g:solarized_termcolors=16
     syntax on
     set background=dark
-    colorscheme pablo
+    colorscheme solarized
 endif
 
