@@ -1,4 +1,5 @@
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sections:
 "    -> General
@@ -32,6 +33,15 @@ set history=700
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+set mouse=a                 " Automatically enable mouse usage
+set mousehide               " Hide the mouse cursor while typing
+scriptencoding utf-8
+set foldenable                  " Auto fold code
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+
+" For when you forget to sudo.. Really Write the file.
+cmap w!! w !sudo tee % >/dev/null
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -46,8 +56,11 @@ nmap <leader>w :w!<cr>
 " Fast quit
 nmap <leader>q :qa!<cr>
 
-" use mouse
-set mouse=a
+
+ " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
+map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -103,13 +116,11 @@ set novisualbell
 set t_vb=
 set tm=500
 
-
+set number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable
-syntax on
 
 colorscheme desert
 set background=dark
@@ -121,6 +132,7 @@ if has("gui_running")
     set t_Co=256
     set guitablabel=%M\ %t
 endif
+
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -250,6 +262,7 @@ set laststatus=2
 
 "configure airline
 set noshowmode
+set cursorline
 set laststatus=2
 set ttimeoutlen=50
 let g:airline_theme='papercolor'
@@ -428,6 +441,9 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+
 
 
 "configure ctrlp.vim
@@ -448,16 +464,20 @@ nnoremap <Leader>a :Tabularize /
 vnoremap <Leader>a :Tabularize /
 
 "change swap file location
-set directory=~/.vimtemp/swaps//
-set backupdir=~/.vimtemp/backups//
+set directory=~/.vim/.vimtemp/swaps//
+set backupdir=~/.vim/.vimtemp/backups//
 set udf
-set udir=~/.vimtemp/undo//
+set udir=~/.vim/.vimtemp/undo//
+
+"change .viminfo file location"
+set viminfo+=n~/.vim/.viminfo
 
 
 "configure tagbar
 nmap <F8>  :Tagbar<CR>
 
 if has('gui_running')
+    set guioptions-=T
     set background=dark
     colorscheme solarized
 else
@@ -466,4 +486,3 @@ else
     set background=dark
     colorscheme solarized
 endif
-

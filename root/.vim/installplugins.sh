@@ -45,7 +45,6 @@ cd ~/.vim/bundle && git clone git://github.com/airblade/vim-gitgutter.git
 cd ~/.vim/bundle && git clone git://github.com/tacahiroy/ctrlp-funky.git
 
 
-
 mkdir -p ~/.vim/.vimtemp/swaps ~/.vim/.vimtemp/backups ~/.vim/.vimtemp/undo
 
 #install ctags
