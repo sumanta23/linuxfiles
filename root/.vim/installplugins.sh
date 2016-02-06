@@ -38,8 +38,15 @@ cd ~/.vim/bundle && git clone https://github.com/tpope/vim-surround.git
 #install tagbar
 cd ~/.vim/bundle && git clone https://github.com/majutsushi/tagbar.git
 
+#install git-gutter
+cd ~/.vim/bundle && git clone git://github.com/airblade/vim-gitgutter.git
 
-mkdir -p ~/.vimtemp/swaps ~/.vimtemp/backups ~/.vimtemp/undo
+#install ctrlp-funky
+cd ~/.vim/bundle && git clone git://github.com/tacahiroy/ctrlp-funky.git
+
+
+
+mkdir -p ~/.vim/.vimtemp/swaps ~/.vim/.vimtemp/backups ~/.vim/.vimtemp/undo
 
 #install ctags
 #sudo apt-get install ctags
